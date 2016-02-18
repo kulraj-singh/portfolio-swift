@@ -11,12 +11,18 @@ import Alamofire
 
 class PortfolioViewController: BaseViewController {
     
+    @IBOutlet var collApps : UICollectionView!
+    @IBOutlet var viewCall : UIView!
+    var apps = [AppModel]()
+    let nameLabelSize: CGFloat = 50
+    
     //MARK: - vc life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        //self.viewCall.addTapRecognizerWithTarget(self, action: Selector(didReceiveMemoryWarning()))
+        self.sendDataToServerWithTask(.TaskPortfolioList)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,11 +35,44 @@ class PortfolioViewController: BaseViewController {
         switch taskType {
         case .TaskPortfolioList:
             let url = baseUrl + "portfolio"
-            Alamofire.request(.POST, url).responseJSON(completionHandler: <#T##Response<AnyObject, NSError> -> Void#>)
+            
+            Alamofire.request(.GET, url).responseJSON() {
+                data in
+                if (data.response != nil) {
+                    self.recievedServiceResponse(data.data!, task: taskType)
+                    
+                } else {
+                    print(data.result.error)
+                }
+            }
+            
+        default: break
             
         }
     }
     
+    func recievedServiceResponse(responseData: NSData, task: AFManager.TaskType) {
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(responseData, options: [])
+            print(json)
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+//        let responseString = String.init(data: responseData, encoding: NSUTF8StringEncoding)
+//        let responseDict = NSJSONSerialization.dataWithJSONObject(responseData, options: nsjson)
+    }
+    
+    //MARK: gesture
+    
+    @IBAction func callClicked(sender: AnyObject) {
+        
+    }
+    
+    //MARK: - button clicks
+    
+    @IBAction func rightBarButtonClicked(sender: AnyObject) {
+        
+    }
 
 //    
 //    - (void)viewDidLoad {
@@ -173,4 +212,49 @@ class PortfolioViewController: BaseViewController {
 //    @end
 
 
+}
+
+extension PortfolioViewController : UICollectionViewDataSource {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let itemCount = self.apps.count
+        return itemCount
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let reuseIdentifier = "cell"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) 
+        
+        //configure the cell
+        
+        for subview in cell.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        //image
+        let cellWidth = cell.frame.size.width
+        let margin = 5 as CGFloat
+        let imgWidth = cellWidth - 2 * margin
+        let img = UIImageView.init(frame: CGRectMake(margin, 0, imgWidth, imgWidth))
+        let app = self.apps[indexPath.row]
+        img.roundCornersWithRadius(10, borderColor: UIColor.clearColor(), borderWidth: 1)
+        let url = NSURL.init(string: app.thumbnail)!
+        img.setImageWithUrl(url, placeHolderImage: UIImage.init(named: "logo512X512"))
+        cell.addSubview(img)
+        
+        //image name
+        let lblName = UILabel.init(frame: CGRectMake(margin, imgWidth + margin, imgWidth, self.nameLabelSize - margin))
+        lblName.text = app.name
+        lblName.textColor = UIColor.blackColor()
+        lblName.numberOfLines = 0
+        lblName.font = UIFont.systemFontOfSize(14)
+        lblName.textAlignment = NSTextAlignment.Center
+        cell.addSubview(lblName)
+
+        return cell
+    }
 }

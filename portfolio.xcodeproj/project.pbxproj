@@ -14,6 +14,9 @@
 		E31D24661BFF249D00B1631A /* welcome_xperts.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E31D24641BFF249D00B1631A /* welcome_xperts.mp3 */; };
 		E31D246C1BFF49FD00B1631A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31D246B1BFF49FD00B1631A /* HomeViewController.xib */; };
 		E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34616F91C0ED76A009685EA /* ViewManipulations.swift */; };
+		E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */; };
+		E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B65501C6DEC5E00B4B064 /* AppModel.swift */; };
+		E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */; };
 		E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF75B1C36A1FF00158C8F /* PortfolioViewController.swift */; };
 		E35FF75E1C36A26B00158C8F /* PortfolioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35FF75D1C36A26B00158C8F /* PortfolioViewController.xib */; };
 		E35FF7801C36AB9500158C8F /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF77F1C36AB9500158C8F /* AFManager.swift */; };
@@ -68,6 +71,10 @@
 		E31D24641BFF249D00B1631A /* welcome_xperts.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcome_xperts.mp3; sourceTree = "<group>"; };
 		E31D246B1BFF49FD00B1631A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E34616F91C0ED76A009685EA /* ViewManipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManipulations.swift; sourceTree = "<group>"; };
+		E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		E35B65501C6DEC5E00B4B064 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		E35B65521C6DFBB700B4B064 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
+		E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AFNetworking.swift"; sourceTree = "<group>"; };
 		E35FF75B1C36A1FF00158C8F /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		E35FF75D1C36A26B00158C8F /* PortfolioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioViewController.xib; sourceTree = "<group>"; };
 		E35FF77F1C36AB9500158C8F /* AFManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFManager.swift; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 		1E03A95254E7F5EC96763DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E35B65521C6DFBB700B4B064 /* AlamofireImage.framework */,
 				E37256C41C3B885C00C4D40E /* Alamofire.framework */,
 				E37256C21C3B885300C4D40E /* Alamofire.framework */,
 				E3718A081C3A953B0004A46A /* Alamofire.framework */,
@@ -150,8 +158,18 @@
 			isa = PBXGroup;
 			children = (
 				E34616F91C0ED76A009685EA /* ViewManipulations.swift */,
+				E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */,
 			);
 			name = extensions;
+			sourceTree = "<group>";
+		};
+		E35B654D1C6DEC2C00B4B064 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */,
+				E35B65501C6DEC5E00B4B064 /* AppModel.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 		E3A3908E1BF2082F0047EFD8 = {
@@ -212,6 +230,7 @@
 		E3A390CE1BF210B00047EFD8 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				E35B654D1C6DEC2C00B4B064 /* models */,
 				E3A390CF1BF210BB0047EFD8 /* external classes */,
 			);
 			name = classes;
@@ -427,13 +446,16 @@
 			files = (
 				E35FF7801C36AB9500158C8F /* AFManager.swift in Sources */,
 				E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */,
+				E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */,
 				E31D245B1BFEF13E00B1631A /* Macros.swift in Sources */,
 				E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */,
+				E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */,
 				E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */,
 				E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */,
 				E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */,
 				E3A390C91BF20AC40047EFD8 /* BaseViewController.swift in Sources */,
 				E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */,
+				E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

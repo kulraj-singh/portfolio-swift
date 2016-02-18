@@ -1,5 +1,5 @@
 //
-//  AppModel.swift
+//  BaseModel.swift
 //  portfolio
 //
 //  Created by iOS Developer on 12/02/16.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class AppModel: BaseModel {
-    var thumbnail: String = ""
-    var name: String = ""
+class BaseModel: NSObject {
+
 }

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1254301D39CC2BDABE00EC6E3ED19D502373C889",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AA9D8933E7490BA2B57F79D853CD05AFAFF7809A" : 0,
+    "1254301D39CC2BDABE00EC6E3ED19D502373C889" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6E650E22-2752-424B-969A-A3256DF76678",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AA9D8933E7490BA2B57F79D853CD05AFAFF7809A" : "..",
+    "1254301D39CC2BDABE00EC6E3ED19D502373C889" : "portfolio-swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "portfolio",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "portfolio.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kulraj-singh\/portfolio-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1254301D39CC2BDABE00EC6E3ED19D502373C889"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kulraj-singh\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AA9D8933E7490BA2B57F79D853CD05AFAFF7809A"
+    }
+  ]
+}
