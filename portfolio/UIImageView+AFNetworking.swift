@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc public protocol AFImageCacheProtocol:class{
+@objc public protocol AFImageCacheProtocol:class {
     func cachedImageForRequest(request:NSURLRequest) -> UIImage?
     func cacheImage(image:UIImage, forRequest request:NSURLRequest);
 }

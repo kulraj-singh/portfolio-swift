@@ -8,8 +8,9 @@
 
 import UIKit
 import Alamofire
+import KFSwiftImageLoader
 
-class PortfolioViewController: BaseViewController {
+class PortfolioViewController : BaseViewController {
     
     @IBOutlet var collApps : UICollectionView!
     @IBOutlet var viewCall : UIView!
@@ -23,6 +24,7 @@ class PortfolioViewController: BaseViewController {
         // Do any additional setup after loading the view.
         //self.viewCall.addTapRecognizerWithTarget(self, action: Selector(didReceiveMemoryWarning()))
         self.sendDataToServerWithTask(.TaskPortfolioList)
+        self.collApps.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +34,8 @@ class PortfolioViewController: BaseViewController {
     
     func sendDataToServerWithTask(taskType: AFManager.TaskType) {
         
+        self.showActivityIndicator(self.view)
+        
         switch taskType {
         case .TaskPortfolioList:
             let url = baseUrl + "portfolio"
@@ -40,7 +44,6 @@ class PortfolioViewController: BaseViewController {
                 data in
                 if (data.response != nil) {
                     self.recievedServiceResponse(data.data!, task: taskType)
-                    
                 } else {
                     print(data.result.error)
                 }
@@ -52,14 +55,24 @@ class PortfolioViewController: BaseViewController {
     }
     
     func recievedServiceResponse(responseData: NSData, task: AFManager.TaskType) {
+        self.hideActivityIndicator()
+        
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(responseData, options: [])
-            print(json)
+            let responseDict = try NSJSONSerialization.JSONObjectWithData(responseData, options: []) as! [String:AnyObject]
+            let status = responseDict[kStatus] as! Int
+            if (status == 1) {
+                let apps = responseDict["portFolioList"] as! [Dictionary<String, AnyObject>]
+                for appDict in apps {
+                    let app = AppModel.init(response: appDict)
+                    self.apps.append(app)
+                }
+                self.collApps.reloadData()
+            } else {
+                print("error")
+            }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
         }
-//        let responseString = String.init(data: responseData, encoding: NSUTF8StringEncoding)
-//        let responseDict = NSJSONSerialization.dataWithJSONObject(responseData, options: nsjson)
     }
     
     //MARK: gesture
@@ -214,7 +227,10 @@ class PortfolioViewController: BaseViewController {
 
 }
 
+//MARK: -
 extension PortfolioViewController : UICollectionViewDataSource {
+    
+    //MARK: collection view data source
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1;
@@ -242,7 +258,7 @@ extension PortfolioViewController : UICollectionViewDataSource {
         let img = UIImageView.init(frame: CGRectMake(margin, 0, imgWidth, imgWidth))
         let app = self.apps[indexPath.row]
         img.roundCornersWithRadius(10, borderColor: UIColor.clearColor(), borderWidth: 1)
-        let url = NSURL.init(string: app.thumbnail)!
+        let url = NSURL.init(string: app.thumbnailLink)!
         img.setImageWithUrl(url, placeHolderImage: UIImage.init(named: "logo512X512"))
         cell.addSubview(img)
         
@@ -256,5 +272,16 @@ extension PortfolioViewController : UICollectionViewDataSource {
         cell.addSubview(lblName)
 
         return cell
+    }
+}
+
+//MARK: -
+
+extension PortfolioViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let width = screenSize().width/3
+        return CGSizeMake(width, width)
     }
 }

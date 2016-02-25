@@ -12,6 +12,7 @@ import Alamofire
 class BaseViewController: UIViewController {
     
     var appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let loadingView: UIView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,34 @@ class BaseViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    // MARK: - loader
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showActivityIndicator(uiView: UIView) {
+        let container: UIView = UIView()
+        container.frame = uiView.frame
+        container.center = uiView.center
+        container.backgroundColor = UIColor.hexToRgb(0xffffff, alpha: 0.3)
+        
+        self.loadingView.frame = CGRectMake(0, 0, 80, 80)
+        self.loadingView.center = uiView.center
+        self.loadingView.backgroundColor = UIColor.hexToRgb(0x444444, alpha: 0.7)
+        self.loadingView.clipsToBounds = true
+        self.loadingView.layer.cornerRadius = 10
+        
+        let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
+        actInd.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        actInd.activityIndicatorViewStyle =
+        UIActivityIndicatorViewStyle.WhiteLarge
+        actInd.center = CGPointMake(loadingView.frame.size.width / 2,
+        loadingView.frame.size.height / 2);
+        loadingView.addSubview(actInd)
+        container.addSubview(loadingView)
+        uiView.addSubview(container)
+        actInd.startAnimating()
     }
-    */
+    
+    func hideActivityIndicator() {
+        self.loadingView.superview!.removeFromSuperview()
+    }
 
 }

@@ -29,6 +29,8 @@
 		E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390CA1BF20AE50047EFD8 /* LaunchViewController.swift */; };
 		E3A390CD1BF20AE50047EFD8 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A390CB1BF20AE50047EFD8 /* LaunchViewController.xib */; };
 		E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */; };
+		E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */; };
+		E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8E1C7F29C000378BEB /* StringHandling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		E3A390CA1BF20AE50047EFD8 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E3A390CB1BF20AE50047EFD8 /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
+		E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexToRgb.swift; sourceTree = "<group>"; };
+		E3B74C8E1C7F29C000378BEB /* StringHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHandling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				E34616F91C0ED76A009685EA /* ViewManipulations.swift */,
+				E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */,
+				E3B74C8E1C7F29C000378BEB /* StringHandling.swift */,
 				E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */,
 			);
 			name = extensions;
@@ -451,10 +457,12 @@
 				E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */,
 				E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */,
 				E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */,
+				E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */,
 				E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */,
 				E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */,
 				E3A390C91BF20AC40047EFD8 /* BaseViewController.swift in Sources */,
 				E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */,
+				E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */,
 				E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

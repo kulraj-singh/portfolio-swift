@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KFSwiftImageLoader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-portfolio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6AB08E1C8CAF502FC1460F45C0D3F1</key>
+		<key>935868B02D678B72AAD39DDD2E0FCF7D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE998A7ABFFCCD72423346E1E0C9DC51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
