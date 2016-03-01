@@ -15,6 +15,9 @@ let kItuneLink = "itune"
 let kName = "name"
 let kPlaystoreLink = "playstore"
 let kThumbnailLink = "thumbnail"
+let kImages = "images"
+let kIsAvailableItune = "isAvaliableoniTune"
+let kIsAvailablePlaystore = "isavailableonplaystore"
 
 class AppModel: BaseModel {
     var thumbnailLink: String = ""
@@ -24,6 +27,9 @@ class AppModel: BaseModel {
     var playstoreLink = ""
     var status = 1
     var desCription = ""
+    var images = [String]()
+    var isAvailableOnItunes = true
+    var isAvailableOnPlaystore = true
     
     internal override init(response: AnyObject?) {
         super.init(response: response)
@@ -35,6 +41,13 @@ class AppModel: BaseModel {
             self.name = self.checkNil(responseDict[kName] as? String)
             self.playstoreLink = self.checkNil(responseDict[playstoreLink] as? String)
             self.status = self.checkInt(responseDict[kStatus] as? Int)
+            if let images = responseDict[kImages] as? [String] {
+                for image in images {
+                    self.images.append(image)
+                }
+            }
+            self.isAvailableOnItunes = responseDict[kIsAvailableItune] as! Bool
+            self.isAvailableOnPlaystore = responseDict[kIsAvailablePlaystore] as! Bool
         } else {
             print(response?.classForCoder)
         }

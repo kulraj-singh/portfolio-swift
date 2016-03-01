@@ -28,7 +28,11 @@ class BaseViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    // MARK: - loader
+    internal func callClicked() {
+        
+    }
+    
+    // MARK: loader
 
     func showActivityIndicator(uiView: UIView) {
         let container: UIView = UIView()

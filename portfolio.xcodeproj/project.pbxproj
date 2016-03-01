@@ -21,6 +21,8 @@
 		E35FF75E1C36A26B00158C8F /* PortfolioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35FF75D1C36A26B00158C8F /* PortfolioViewController.xib */; };
 		E35FF7801C36AB9500158C8F /* AFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF77F1C36AB9500158C8F /* AFManager.swift */; };
 		E37256C51C3B885C00C4D40E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37256C41C3B885C00C4D40E /* Alamofire.framework */; };
+		E39962251C806DA000BD9602 /* PortfolioDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39962241C806DA000BD9602 /* PortfolioDetailViewController.swift */; };
+		E39962271C806DA900BD9602 /* PortfolioDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E39962261C806DA900BD9602 /* PortfolioDetailViewController.xib */; };
 		E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3909A1BF2082F0047EFD8 /* AppDelegate.swift */; };
 		E3A390A21BF2082F0047EFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A390A11BF2082F0047EFD8 /* Assets.xcassets */; };
 		E3A390B01BF2082F0047EFD8 /* portfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390AF1BF2082F0047EFD8 /* portfolioTests.swift */; };
@@ -83,6 +85,8 @@
 		E3718A081C3A953B0004A46A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		E37256C21C3B885300C4D40E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		E37256C41C3B885C00C4D40E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		E39962241C806DA000BD9602 /* PortfolioDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioDetailViewController.swift; sourceTree = "<group>"; };
+		E39962261C806DA900BD9602 /* PortfolioDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioDetailViewController.xib; sourceTree = "<group>"; };
 		E3A390971BF2082F0047EFD8 /* portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A3909A1BF2082F0047EFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A390A11BF2082F0047EFD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				E31D246B1BFF49FD00B1631A /* HomeViewController.xib */,
 				E35FF75B1C36A1FF00158C8F /* PortfolioViewController.swift */,
 				E35FF75D1C36A26B00158C8F /* PortfolioViewController.xib */,
+				E39962241C806DA000BD9602 /* PortfolioDetailViewController.swift */,
+				E39962261C806DA900BD9602 /* PortfolioDetailViewController.xib */,
 			);
 			name = "view controller";
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39962271C806DA900BD9602 /* PortfolioDetailViewController.xib in Resources */,
 				E31D24651BFF249D00B1631A /* guitar.mp3 in Resources */,
 				E3A390A21BF2082F0047EFD8 /* Assets.xcassets in Resources */,
 				E31D246C1BFF49FD00B1631A /* HomeViewController.xib in Resources */,
@@ -454,6 +461,7 @@
 				E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */,
 				E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */,
 				E31D245B1BFEF13E00B1631A /* Macros.swift in Sources */,
+				E39962251C806DA000BD9602 /* PortfolioDetailViewController.swift in Sources */,
 				E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */,
 				E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */,
 				E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */,
