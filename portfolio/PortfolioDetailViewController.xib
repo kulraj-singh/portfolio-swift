@@ -36,9 +36,6 @@
                             <state key="normal" image="home_icon">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="rightBarButtonClicked:" destination="-1" eventType="touchUpInside" id="w8T-I6-QRl"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No1-ky-yij">
                             <rect key="frame" x="11" y="16" width="35" height="35"/>
@@ -165,22 +162,10 @@
                         <constraint firstItem="SBS-Qb-GVo" firstAttribute="top" secondItem="g5x-HO-MGi" secondAttribute="top" constant="4" id="lZ0-Fv-boD"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6i-pw-hEV" customClass="FXPageControl">
-                    <rect key="frame" x="0.0" y="531" width="600" height="16"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="16" id="7y1-WV-wTc"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="dotSize">
-                            <real key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AJl-oD-idP">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AJl-oD-idP">
                     <rect key="frame" x="0.0" y="64" width="600" height="489"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wmo-Fa-mPu">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wmo-Fa-mPu">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -194,18 +179,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="g5x-HO-MGi" firstAttribute="top" secondItem="h6i-pw-hEV" secondAttribute="bottom" constant="8" id="4j7-pI-E7F"/>
                 <constraint firstAttribute="trailing" secondItem="AJl-oD-idP" secondAttribute="trailing" id="7G1-6y-W26"/>
                 <constraint firstAttribute="bottom" secondItem="g5x-HO-MGi" secondAttribute="bottom" id="9kb-Ah-KVv"/>
                 <constraint firstItem="AJl-oD-idP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G2b-Mx-A2I"/>
-                <constraint firstAttribute="trailing" secondItem="h6i-pw-hEV" secondAttribute="trailing" id="JJ9-Sn-5Uu"/>
                 <constraint firstItem="Ih8-sD-un4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KPX-oN-liO"/>
                 <constraint firstAttribute="bottom" secondItem="Ih8-sD-un4" secondAttribute="bottom" id="QnY-8c-y60"/>
                 <constraint firstAttribute="trailing" secondItem="l5n-QI-8v9" secondAttribute="trailing" id="Uqn-7k-qAx"/>
                 <constraint firstAttribute="bottom" secondItem="udC-52-RJ6" secondAttribute="bottom" id="WDq-U6-DtN"/>
                 <constraint firstItem="l5n-QI-8v9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zbs-WI-gLw"/>
                 <constraint firstAttribute="trailing" secondItem="g5x-HO-MGi" secondAttribute="trailing" id="dNw-l6-bAK"/>
-                <constraint firstItem="h6i-pw-hEV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hSj-2W-kQU"/>
                 <constraint firstItem="AJl-oD-idP" firstAttribute="top" secondItem="l5n-QI-8v9" secondAttribute="bottom" id="hzz-yN-u7O"/>
                 <constraint firstItem="g5x-HO-MGi" firstAttribute="top" secondItem="AJl-oD-idP" secondAttribute="bottom" constant="2" id="jVD-jY-yvt"/>
                 <constraint firstItem="l5n-QI-8v9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kii-hj-byz"/>

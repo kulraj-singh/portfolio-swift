@@ -22,7 +22,7 @@ class PortfolioDetailViewController: BaseViewController {
     internal var selectedIndex: Int = 0
     internal var apps = [AppModel]()
     
-    //MARK: vc life cycle
+    //MARK: - vc life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,8 @@ class PortfolioDetailViewController: BaseViewController {
             self.setEqualWidths()
             self.sendDataToServerWithTask(.TaskGetAppDetails)
         }
+        self.collImages.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
+        self.addTapGesture()
     }
     
     //MARK: UI
@@ -59,11 +61,7 @@ class PortfolioDetailViewController: BaseViewController {
     func setEqualWidths() {
         let width = screenSize().width/3
         self.itunesWidth.constant = width
-        self.playstoreWidth.constant = width
-    }
-    
-    func addTapGesture() {
-        
+        self.playstoreWidth.constant = width + 1
     }
     
     //MARK: call service
@@ -75,11 +73,12 @@ class PortfolioDetailViewController: BaseViewController {
         switch taskType {
         case .TaskGetAppDetails:
             let app = self.apps[self.selectedIndex]
-            let postDict = Dictionary<String, AnyObject>
+            var postDict : Dictionary<String, AnyObject> = Dictionary()
+            postDict.updateValue(app.Id, forKey: kId)
             
-            let url = baseUrl + "portfolio"
+            let url = baseUrl + "portfolio-detail"
             
-            Alamofire.request(.GET, url).responseJSON() {
+            Alamofire.request(.POST, url, parameters: postDict, encoding: .URL, headers: nil).responseJSON() {
                 data in
                 if (data.response != nil) {
                     self.recievedServiceResponse(data.data!, task: taskType)
@@ -102,152 +101,91 @@ class PortfolioDetailViewController: BaseViewController {
             let responseDict = try NSJSONSerialization.JSONObjectWithData(responseData, options: []) as! [String:AnyObject]
             let status = responseDict[kStatus] as! Int
             if (status == 1) {
-                let apps = responseDict["portFolioList"] as! [Dictionary<String, AnyObject>]
-                for appDict in apps {
-                    let app = AppModel.init(response: appDict)
-                    self.apps.append(app)
-                }
+                let portfolioDict = responseDict["portFolio"]
+                let app = AppModel.init(response: portfolioDict)
+                self.apps[self.selectedIndex] = app
+                self.bindUiWithApp(app)
                 self.collImages.reloadData()
             } else {
-                print("error")
+                print(responseDict["error"])
             }
         } catch let error as NSError {
             print("Failed to load: \(error.localizedDescription)")
         }
     }
     
-//    
-//    #pragma mark - send data to server
-//    
-//    - (void)sendDataToServerWithTask:(NSInteger)task
-//    {
-//    [self showLoader];
-//    
-//    NSMutableDictionary *postDict = [[NSMutableDictionary alloc]init];
-//    switch (task) {
-//    case TASK_PORTFOLIO_DETAILS:
-//    {
-//    AppModel *app = _apps[_selectedIndex];
-//    [postDict setObject:app.Id forKey:kId];
-//    [_requestManager callServiceWithRequestType:TASK_PORTFOLIO_DETAILS method:METHOD_POST params:postDict urlEndPoint:@"portfolio-detail"];
-//    break;
-//    }
-//    
-//    default:
-//    break;
-//    }
-//    }
-//    
-//    #pragma mark - connection manager delegate
-//    
-//    - (void)requestFinishedWithResponse:(id)response
-//    {
-//    [self removeLoader];
-//    
-//    NSInteger requestType = [[response objectForKey:kRequestType]integerValue];
-//    NSDictionary *responseDict = [response objectForKey:kResponseObject];
-//    BOOL success = [[responseDict objectForKey:kStatus]boolValue];
-//    NSString *message = [responseDict objectForKey:kMessage];
-//    
-//    if (success) {
-//    switch (requestType) {
-//    case TASK_PORTFOLIO_DETAILS:
-//    {
-//    NSDictionary *portfolioDict = [responseDict objectForKey:@"portFolio"];
-//    AppModel *app = [[AppModel alloc]initWithResponse:portfolioDict];
-//    [_apps replaceObjectAtIndex:_selectedIndex withObject:app];
-//    [self bindUiWithApp:app];
-//    [_carousel reloadData];
-//    break;
-//    }
-//    
-//    default:
-//    break;
-//    }
-//    } else {
-//    kAlert(nil, message);
-//    }
-//    }
-//    
-//    - (void)requestFailedWithError:(NSMutableDictionary *)errorDict
-//    {
-//    [self removeLoader];
-//    NSError *error = [errorDict objectForKey:kError];
-//    NSInteger tag = [[errorDict objectForKey:kRequestType]integerValue];
-//    [self showServiceFailAlertWithMessage:error.localizedDescription tag:tag];
-//    }
-//    
-//    #pragma mark - gesture
-//    
-//    - (void)addTapGesture
-//    {
-//    [self.viewPlaystore addTapRecognizerWithTarget:self selector:@selector(playstoreClicked:)];
-//    [self.viewItunes addTapRecognizerWithTarget:self selector:@selector(itunesClicked:)];
-//    [self.viewCall addTapRecognizerWithTarget:self selector:@selector(callClicked:)];
-//    }
-//    
-//    - (IBAction)playstoreClicked:(id)sender
-//    {
-//    AppModel *app = _apps[_selectedIndex];
-//    NSURL *url = [NSURL URLWithString:app.playstore];
-//    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//    [[UIApplication sharedApplication]openURL:url];
-//    } else {
-//    kAlert(nil, @"cannot open playstore link");
-//    }
-//    }
-//    
-//    - (IBAction)itunesClicked:(id)sender
-//    {
-//    AppModel *app = _apps[_selectedIndex];
-//    NSString *ituneUrl = app.itunes;
-//    NSURL *url = [NSURL URLWithString:ituneUrl];
-//    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//    [[UIApplication sharedApplication]openURL:url];
-//    } else {
-//    kAlert(nil, @"cannot open itunes link");
-//    }
-//    }
-//    
-//    #pragma mark - icarousel data source
-//    
-//    - (NSInteger)numberOfItemsInCarousel:(iCarousel * __nonnull)carousel
-//    {
-//    AppModel *app = _apps[_selectedIndex];
-//    return app.images.count;
-//    }
-//    
-//    - (UIView*)carousel:(iCarousel * __nonnull)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view
-//    {
-//    if (!view) {
-//    CGSize carouselSize = carousel.frame.size;
-//    int width = carouselSize.width;
-//    int height = carouselSize.height;
-//    view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width * 0.7, height * 0.9)];
-//    } else {
-//    for (UIView *subview in view.subviews) {
-//    [subview removeFromSuperview];
-//    }
-//    }
-//    
-//    CGSize viewSize = view.frame.size;
-//    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, viewSize.width, viewSize.height)];
-//    img.contentMode = UIViewContentModeScaleAspectFit;
-//    AppModel *app = _apps[_selectedIndex];
-//    NSString *url = app.images[index];
-//    UIImage *placeholder = [UIImage imageNamed:@"vertical_placeholder.jpg"];
-//    [img setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
-//    [view addSubview:img];
-//    
-//    return view;
-//    }
-//    
-//    #pragma mark - icarousel delegate
-//    
-//    - (void)carouselCurrentItemIndexDidChange:(iCarousel * __nonnull)carousel
-//    {
-//    //change dots
-//    _pageControl.currentPage = carousel.currentItemIndex;
-//    }
+    //MARK: gesture
+    
+    func addTapGesture() {
+        self.viewCall.addTapRecognizerWithTarget(self, action: Selector(callClicked()))
+        //self.viewItunes.addTapRecognizerWithTarget(self, action: Selector(itunesClicked()))
+        self.viewPlaystore.addTapRecognizerWithTarget(self, action: Selector(playstoreClicked()))
+    }
 
+    func playstoreClicked() {
+        let app = self.apps[self.selectedIndex]
+        let url = NSURL.init(string: app.playstoreLink)!
+        if (UIApplication.sharedApplication().canOpenURL(url)) {
+            //UIApplication.sharedApplication().openURL(url)
+        } else {
+            print("unable to open playstore link")
+        }
+    }
+    
+    func itunesClicked() {
+        let app = self.apps[self.selectedIndex]
+        let url = NSURL.init(string: app.itunesLink)!
+        if (UIApplication.sharedApplication().canOpenURL(url)) {
+            UIApplication.sharedApplication().openURL(url)
+        } else {
+            print("unable to open itunes link")
+        }
+    }
+
+}
+
+//MARK: - collection view data source
+
+extension PortfolioDetailViewController : UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let app = self.apps[self.selectedIndex]
+        return app.images.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let identifier = "cell"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
+        for subview in cell.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        let cellSize = cell.frame.size
+        let img = UIImageView.init(frame: CGRectMake(0, 0, cellSize.width * 0.7, cellSize.height * 0.9))
+        img.center = CGPointMake(cellSize.width/2, cellSize.height/2)
+        img.contentMode = .ScaleAspectFit
+        let app = self.apps[self.selectedIndex]
+        let urlString = app.images[indexPath.row]
+        let url = NSURL.init(string: urlString)!
+        let placeholder = UIImage.init(named: "vertical_placeholder.jpg")
+        img.setImageWithUrl(url, placeHolderImage: placeholder)
+        cell.addSubview(img)
+        
+        return cell
+    }
+}
+
+//MARK: - collection view delegate
+
+extension PortfolioDetailViewController : UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        //
+    }
+}
+
+//MARK: - collection view flow layout
+
+extension PortfolioDetailViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return collectionView.frame.size
+    }
 }

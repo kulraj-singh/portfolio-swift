@@ -124,8 +124,8 @@ extension PortfolioViewController : UICollectionViewDataSource {
         let img = UIImageView.init(frame: CGRectMake(margin, 0, imgWidth, imgWidth))
         let app = self.apps[indexPath.row]
         img.roundCornersWithRadius(10, borderColor: UIColor.clearColor(), borderWidth: 1)
-        let url = NSURL.init(string: app.thumbnailLink)!
-        img.setImageWithUrl(url, placeHolderImage: UIImage.init(named: "logo512X512"))
+        let url = NSURL.init(string: app.thumbnailLink)
+        img.setImageWithUrl(url!, placeHolderImage: UIImage.init(named: "logo512X512"))
         cell.addSubview(img)
         
         //image name

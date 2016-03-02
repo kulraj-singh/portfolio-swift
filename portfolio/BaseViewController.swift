@@ -38,10 +38,12 @@ class BaseViewController: UIViewController {
         let container: UIView = UIView()
         container.frame = uiView.frame
         container.center = uiView.center
-        container.backgroundColor = UIColor.hexToRgb(0xffffff, alpha: 0.3)
+        container.backgroundColor = UIColor.hexToRgb(0xffffff, alpha: 0.1)
+        container.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         self.loadingView.frame = CGRectMake(0, 0, 80, 80)
         self.loadingView.center = uiView.center
+        self.loadingView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin, .FlexibleTopMargin]
         self.loadingView.backgroundColor = UIColor.hexToRgb(0x444444, alpha: 0.7)
         self.loadingView.clipsToBounds = true
         self.loadingView.layer.cornerRadius = 10
@@ -52,6 +54,7 @@ class BaseViewController: UIViewController {
         UIActivityIndicatorViewStyle.WhiteLarge
         actInd.center = CGPointMake(loadingView.frame.size.width / 2,
         loadingView.frame.size.height / 2);
+        actInd.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin, .FlexibleTopMargin]
         loadingView.addSubview(actInd)
         container.addSubview(loadingView)
         uiView.addSubview(container)

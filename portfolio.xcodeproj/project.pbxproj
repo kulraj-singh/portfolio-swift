@@ -33,6 +33,7 @@
 		E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */; };
 		E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */; };
 		E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8E1C7F29C000378BEB /* StringHandling.swift */; };
+		E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D62D281C8710B4004478D1 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
 		E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexToRgb.swift; sourceTree = "<group>"; };
 		E3B74C8E1C7F29C000378BEB /* StringHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHandling.swift; sourceTree = "<group>"; };
+		E3D62D281C8710B4004478D1 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			children = (
 				E35B654D1C6DEC2C00B4B064 /* models */,
 				E3A390CF1BF210BB0047EFD8 /* external classes */,
+				E3D62D281C8710B4004478D1 /* AlertController.swift */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */,
 				E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */,
 				E3A390C91BF20AC40047EFD8 /* BaseViewController.swift in Sources */,
+				E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */,
 				E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */,
 				E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */,
 				E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */,

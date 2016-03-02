@@ -35,4 +35,11 @@ class BaseModel: NSObject {
         }
         return num!
     }
+    
+    internal func checkBool(bit: Bool?) -> Bool {
+        if (bit == nil) {
+            return false
+        }
+        return bit!
+    }
 }

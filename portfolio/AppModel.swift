@@ -46,8 +46,8 @@ class AppModel: BaseModel {
                     self.images.append(image)
                 }
             }
-            self.isAvailableOnItunes = responseDict[kIsAvailableItune] as! Bool
-            self.isAvailableOnPlaystore = responseDict[kIsAvailablePlaystore] as! Bool
+            self.isAvailableOnItunes = self.checkBool(responseDict[kIsAvailableItune] as? Bool)
+            self.isAvailableOnPlaystore = self.checkBool(responseDict[kIsAvailablePlaystore] as? Bool)
         } else {
             print(response?.classForCoder)
         }
