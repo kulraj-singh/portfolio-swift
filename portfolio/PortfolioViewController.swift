@@ -84,13 +84,6 @@ class PortfolioViewController : BaseViewController {
     @IBAction func callClicked(sender: AnyObject) {
         
     }
-    
-    //MARK: - button clicks
-    
-    @IBAction func rightBarButtonClicked(sender: AnyObject) {
-        
-    }
-
 }
 
 //MARK: -

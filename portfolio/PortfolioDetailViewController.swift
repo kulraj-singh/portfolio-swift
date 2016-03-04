@@ -107,10 +107,11 @@ class PortfolioDetailViewController: BaseViewController {
                 self.bindUiWithApp(app)
                 self.collImages.reloadData()
             } else {
-                print(responseDict["error"])
+                let err = responseDict[kError] as! String
+                self.alert(err)
             }
         } catch let error as NSError {
-            print("Failed to load: \(error.localizedDescription)")
+            self.alert("Failed to load: \(error.localizedDescription)")
         }
     }
     
@@ -118,7 +119,7 @@ class PortfolioDetailViewController: BaseViewController {
     
     func addTapGesture() {
         self.viewCall.addTapRecognizerWithTarget(self, action: Selector(callClicked()))
-        //self.viewItunes.addTapRecognizerWithTarget(self, action: Selector(itunesClicked()))
+        self.viewItunes.addTapRecognizerWithTarget(self, action: Selector(itunesClicked()))
         self.viewPlaystore.addTapRecognizerWithTarget(self, action: Selector(playstoreClicked()))
     }
 

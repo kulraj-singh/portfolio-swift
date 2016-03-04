@@ -36,6 +36,9 @@
                             <state key="normal" image="home_icon">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="rightBarButtonClicked:" destination="-1" eventType="touchUpInside" id="1Mn-0w-mJp"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No1-ky-yij">
                             <rect key="frame" x="11" y="16" width="35" height="35"/>

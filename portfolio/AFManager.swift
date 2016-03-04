@@ -24,6 +24,8 @@ class AFManager: NSObject {
         case TaskSignup
         case TaskPortfolioList
         case TaskGetAppDetails
+        case TaskAboutUs
+        case TaskServices
     }
     
     func sessionManagerForResponseFormat(responseFormat: ResponseFormat, requestType: TaskType) {

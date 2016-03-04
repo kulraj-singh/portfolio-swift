@@ -120,19 +120,23 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func aboutClicked(sender: AnyObject) {
-        
+        let aboutVc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: nil)
+        self.navigationController?.pushViewController(aboutVc, animated: true)
     }
     
     @IBAction func servicesClicked(sender: AnyObject) {
-        
+        let servicesVc = ServicesViewController.init(nibName: "ServicesViewController", bundle: nil)
+        self.navigationController?.pushViewController(servicesVc, animated: true)
     }
     
     @IBAction func faqClicked(sender: AnyObject) {
-        
+        let faqVc = FaqViewController.init(nibName: "FaqViewController", bundle: nil)
+        self.navigationController?.pushViewController(faqVc, animated: true)
     }
     
     @IBAction func contactClicked(sender: AnyObject) {
-        
+        let aboutVc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: nil)
+        self.navigationController?.pushViewController(aboutVc, animated: true)
     }
     
     @IBAction func soundClicked(sender: AnyObject) {
@@ -140,25 +144,6 @@ class HomeViewController: BaseViewController {
     }
 }
 
-//#pragma mark - button click
-//
-//- (IBAction)portfolioClicked:(id)sender
-//{
-//    PortfolioViewController *portfolioVc = [[PortfolioViewController alloc]initWithNibName:@"PortfolioViewController" bundle:nil];
-//    [self.navigationController pushViewController:portfolioVc animated:YES];
-//    }
-//    
-//    - (IBAction)aboutClicked:(id)sender
-//{
-//    AboutUsViewController *aboutVc = [[AboutUsViewController alloc]initWithNibName:@"AboutUsViewController" bundle:nil];
-//    [self.navigationController pushViewController:aboutVc animated:YES];
-//    }
-//    
-//    - (IBAction)servicesClicked:(id)sender
-//{
-//    ServicesViewController *serviceVc = [[ServicesViewController alloc]initWithNibName:@"ServicesViewController" bundle:nil];
-//    [self.navigationController pushViewController:serviceVc animated:YES];
-//    }
 //    
 //    - (IBAction)faqClicked:(id)sender
 //{

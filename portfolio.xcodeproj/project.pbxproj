@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C57A979F066E4BD7511AD049 /* Pods_portfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADAF43A4AEC7534E537CC5E /* Pods_portfolio.framework */; };
+		E31718091C884CBE00D26675 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31718081C884CBE00D26675 /* AboutUsViewController.swift */; };
+		E317180B1C884D0200D26675 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E317180A1C884D0200D26675 /* AboutUsViewController.xib */; };
+		E317180D1C88549100D26675 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317180C1C88549100D26675 /* ContentModel.swift */; };
+		E317180F1C885F8F00D26675 /* AboutUsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317180E1C885F8F00D26675 /* AboutUsScrollView.swift */; };
+		E31718111C885F9700D26675 /* AboutUsScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31718101C885F9700D26675 /* AboutUsScrollView.xib */; };
 		E31D245B1BFEF13E00B1631A /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D245A1BFEF13E00B1631A /* Macros.swift */; };
 		E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31D245E1BFF0C0200B1631A /* HomeViewController.swift */; };
 		E31D24651BFF249D00B1631A /* guitar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E31D24631BFF249D00B1631A /* guitar.mp3 */; };
@@ -34,6 +39,12 @@
 		E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */; };
 		E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8E1C7F29C000378BEB /* StringHandling.swift */; };
 		E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D62D281C8710B4004478D1 /* AlertController.swift */; };
+		E3D73E071C8994C4009C83DE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D73E061C8994C4009C83DE /* ServicesViewController.swift */; };
+		E3D73E091C89969A009C83DE /* ServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D73E081C89969A009C83DE /* ServicesViewController.xib */; };
+		E3D73E0B1C89B724009C83DE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D73E0A1C89B724009C83DE /* ContactUsViewController.swift */; };
+		E3D73E0D1C89B74B009C83DE /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D73E0C1C89B74B009C83DE /* FaqViewController.swift */; };
+		E3D73E0F1C89B7D6009C83DE /* FaqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D73E0E1C89B7D6009C83DE /* FaqViewController.xib */; };
+		E3D73E111C89B7DB009C83DE /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D73E101C89B7DB009C83DE /* ContactUsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +81,11 @@
 		4ADAF43A4AEC7534E537CC5E /* Pods_portfolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_portfolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E3F6652FD6FE88D34E1D5F /* Pods-portfolio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-portfolio/Pods-portfolio.debug.xcconfig"; sourceTree = "<group>"; };
 		9731CB1C0CF4A6A6504C0526 /* Pods-portfolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolio.release.xcconfig"; path = "Pods/Target Support Files/Pods-portfolio/Pods-portfolio.release.xcconfig"; sourceTree = "<group>"; };
+		E31718081C884CBE00D26675 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		E317180A1C884D0200D26675 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
+		E317180C1C88549100D26675 /* ContentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		E317180E1C885F8F00D26675 /* AboutUsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsScrollView.swift; sourceTree = "<group>"; };
+		E31718101C885F9700D26675 /* AboutUsScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsScrollView.xib; sourceTree = "<group>"; };
 		E31D245A1BFEF13E00B1631A /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		E31D245E1BFF0C0200B1631A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E31D24631BFF249D00B1631A /* guitar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guitar.mp3; sourceTree = "<group>"; };
@@ -105,6 +121,12 @@
 		E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexToRgb.swift; sourceTree = "<group>"; };
 		E3B74C8E1C7F29C000378BEB /* StringHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHandling.swift; sourceTree = "<group>"; };
 		E3D62D281C8710B4004478D1 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		E3D73E061C8994C4009C83DE /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		E3D73E081C89969A009C83DE /* ServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServicesViewController.xib; sourceTree = "<group>"; };
+		E3D73E0A1C89B724009C83DE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		E3D73E0C1C89B74B009C83DE /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		E3D73E0E1C89B7D6009C83DE /* FaqViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqViewController.xib; sourceTree = "<group>"; };
+		E3D73E101C89B7DB009C83DE /* ContactUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactUsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +202,7 @@
 			children = (
 				E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */,
 				E35B65501C6DEC5E00B4B064 /* AppModel.swift */,
+				E317180C1C88549100D26675 /* ContentModel.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -245,6 +268,8 @@
 				E35B654D1C6DEC2C00B4B064 /* models */,
 				E3A390CF1BF210BB0047EFD8 /* external classes */,
 				E3D62D281C8710B4004478D1 /* AlertController.swift */,
+				E317180E1C885F8F00D26675 /* AboutUsScrollView.swift */,
+				E31718101C885F9700D26675 /* AboutUsScrollView.xib */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -270,6 +295,14 @@
 				E35FF75D1C36A26B00158C8F /* PortfolioViewController.xib */,
 				E39962241C806DA000BD9602 /* PortfolioDetailViewController.swift */,
 				E39962261C806DA900BD9602 /* PortfolioDetailViewController.xib */,
+				E31718081C884CBE00D26675 /* AboutUsViewController.swift */,
+				E317180A1C884D0200D26675 /* AboutUsViewController.xib */,
+				E3D73E061C8994C4009C83DE /* ServicesViewController.swift */,
+				E3D73E081C89969A009C83DE /* ServicesViewController.xib */,
+				E3D73E0A1C89B724009C83DE /* ContactUsViewController.swift */,
+				E3D73E101C89B7DB009C83DE /* ContactUsViewController.xib */,
+				E3D73E0C1C89B74B009C83DE /* FaqViewController.swift */,
+				E3D73E0E1C89B7D6009C83DE /* FaqViewController.xib */,
 			);
 			name = "view controller";
 			sourceTree = "<group>";
@@ -381,10 +414,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D73E091C89969A009C83DE /* ServicesViewController.xib in Resources */,
 				E39962271C806DA900BD9602 /* PortfolioDetailViewController.xib in Resources */,
 				E31D24651BFF249D00B1631A /* guitar.mp3 in Resources */,
+				E3D73E111C89B7DB009C83DE /* ContactUsViewController.xib in Resources */,
 				E3A390A21BF2082F0047EFD8 /* Assets.xcassets in Resources */,
+				E3D73E0F1C89B7D6009C83DE /* FaqViewController.xib in Resources */,
 				E31D246C1BFF49FD00B1631A /* HomeViewController.xib in Resources */,
+				E31718111C885F9700D26675 /* AboutUsScrollView.xib in Resources */,
+				E317180B1C884D0200D26675 /* AboutUsViewController.xib in Resources */,
 				E3A390CD1BF20AE50047EFD8 /* LaunchViewController.xib in Resources */,
 				E31D24661BFF249D00B1631A /* welcome_xperts.mp3 in Resources */,
 				E35FF75E1C36A26B00158C8F /* PortfolioViewController.xib in Resources */,
@@ -461,6 +499,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35FF7801C36AB9500158C8F /* AFManager.swift in Sources */,
+				E317180F1C885F8F00D26675 /* AboutUsScrollView.swift in Sources */,
+				E3D73E0B1C89B724009C83DE /* ContactUsViewController.swift in Sources */,
 				E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */,
 				E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */,
 				E31D245B1BFEF13E00B1631A /* Macros.swift in Sources */,
@@ -471,11 +511,15 @@
 				E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */,
 				E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */,
 				E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */,
+				E3D73E0D1C89B74B009C83DE /* FaqViewController.swift in Sources */,
 				E3A390C91BF20AC40047EFD8 /* BaseViewController.swift in Sources */,
+				E31718091C884CBE00D26675 /* AboutUsViewController.swift in Sources */,
 				E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */,
 				E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */,
 				E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */,
 				E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */,
+				E3D73E071C8994C4009C83DE /* ServicesViewController.swift in Sources */,
+				E317180D1C88549100D26675 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

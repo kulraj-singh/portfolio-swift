@@ -10,10 +10,15 @@ import UIKit
 
 let kId = "id"
 let kStatus = "status"
+let kError = "error"
 
 class BaseModel: NSObject {
     
     var Id : String = ""
+    
+    override internal init() {
+        super.init()
+    }
     
     internal init(response: AnyObject?) {
         super.init()

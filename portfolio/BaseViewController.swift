@@ -11,8 +11,11 @@ import Alamofire
 
 class BaseViewController: UIViewController {
     
+    var alertController = UIAlertController.init()
     var appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let loadingView: UIView = UIView()
+    
+    //MARK: vc life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,14 @@ class BaseViewController: UIViewController {
     
     @IBAction func leftBarButtonClicked(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func rightBarButtonClicked(sender: AnyObject) {
+        for viewController in (self.navigationController?.viewControllers)! {
+            if (viewController.isKindOfClass(HomeViewController.classForCoder())) {
+                self.navigationController?.popToViewController(viewController, animated: true)
+            }
+        }
     }
     
     internal func callClicked() {
@@ -64,5 +75,60 @@ class BaseViewController: UIViewController {
     func hideActivityIndicator() {
         self.loadingView.superview!.removeFromSuperview()
     }
-
+    
+    //MARK: alert
+    
+    internal func alert(message: String) {
+        self.alert(nil, message: message, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: 0)
+    }
+    
+    internal func alert(message: String, presentingViewController: UIViewController, tag: Int) {
+        self.alert(nil, message: message, delegate: presentingViewController, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: tag)
+    }
+    
+    internal func alert(title: String?, message: String, delegate:AnyObject?, cancelButtonTitle: String?, otherButtonTitles: Array<String>, style: UIAlertControllerStyle, tag: Int) {
+        self.alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
+        if (cancelButtonTitle != nil) {
+            let cancelAction = UIAlertAction.init(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {
+                _ in
+                self.alertController.dismissViewControllerAnimated(true, completion: nil)
+                self.alertControllerCancelled()
+            })
+            self.alertController.addAction(cancelAction)
+        }
+        
+        for buttonTitle in otherButtonTitles {
+            let okAction = UIAlertAction.init(title: buttonTitle, style: UIAlertActionStyle.Default, handler: {
+                action in
+                self.alertController.dismissViewControllerAnimated(true, completion: nil)
+                let buttonIndex = otherButtonTitles.indexOf(buttonTitle)
+                self.alertButtonClicked(buttonIndex!, tag: tag)
+            })
+            self.alertController.addAction(okAction)
+        }
+        
+        self.presentViewController(self.alertController, animated: true, completion: nil)
+    }
+    
+    internal func addTextFieldToAlertWithPlaceholder(placeholder: String) {
+        self.addTextFieldToAlertWithPlaceholder(placeholder, secureEntry: false)
+    }
+    
+    internal func addTextFieldToAlertWithPlaceholder(placeholder: String, secureEntry: Bool) {
+        self.alertController.addTextFieldWithConfigurationHandler() {
+            textField in
+            textField.placeholder = placeholder
+            textField.secureTextEntry = secureEntry
+        }
+    }
+    
+    //MARK: pseudo alert delegates
+    
+    internal func alertControllerCancelled() {
+        
+    }
+    
+    internal func alertButtonClicked(index: Int, tag: Int) {
+        
+    }
 }

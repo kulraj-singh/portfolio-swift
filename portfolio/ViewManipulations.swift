@@ -57,14 +57,14 @@ extension UIView {
     }
     
     public func animateToFrame(finalFrame: CGRect, duration: NSTimeInterval) {
-        UIView.animateWithDuration(duration, animations: { () -> Void in
+        UIView.animateWithDuration(duration, animations: { _ in
             self.frame = finalFrame
         })
     }
     
     //MARK: - gesture
     
-    public func addTapRecognizerWithTarget(target: NSObject, action: Selector) {
+    public func addTapRecognizerWithTarget(target: AnyObject, action: Selector) {
         let tapRecognizer = UITapGestureRecognizer.init(target: target, action: action)
         self.userInteractionEnabled = true
         self.addGestureRecognizer(tapRecognizer)

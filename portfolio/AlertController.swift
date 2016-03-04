@@ -17,23 +17,24 @@ class AlertController: NSObject {
     
     var delegate: AlertControllerDelegate?
     
-    class func alertWithMessage(message: String, presentingViewController: UIViewController) {
-        self.showAlertWithTitle(nil, message: message, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, presentingViewController: presentingViewController, tag: 0)
-    }
-    
-    class func alertWithMessage(message: String, presentingViewController: UIViewController, tag: Int) {
-        self.showAlertWithTitle(nil, message: message, delegate: presentingViewController, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, presentingViewController: presentingViewController, tag: tag)
-    }
-    
-    class func showAlertWithTitle(title: String?, message: String, delegate:AnyObject?, cancelButtonTitle: String?, otherButtonTitles: Array<String>?, style: UIAlertControllerStyle, presentingViewController: UIViewController, tag: Int) {
-        let alert = UIAlertController.init(title: title, message: message, preferredStyle: style)
-        if (cancelButtonTitle != nil) {
-            let cancelAction = UIAlertAction.init(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {
-                _ in
-                alert.dismissViewControllerAnimated(true, completion: nil)
-            })
-        }
-    }
+//    class func alertWithMessage(message: String, presentingViewController: UIViewController) {
+//        self.showAlertWithTitle(nil, message: message, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, presentingViewController: presentingViewController, tag: 0)
+//    }
+//    
+//    class func alertWithMessage(message: String, presentingViewController: UIViewController, tag: Int) {
+//        self.showAlertWithTitle(nil, message: message, delegate: presentingViewController, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, presentingViewController: presentingViewController, tag: tag)
+//    }
+//    
+//    class func showAlertWithTitle(title: String?, message: String, delegate:AnyObject?, cancelButtonTitle: String?, otherButtonTitles: Array<String>?, style: UIAlertControllerStyle, presentingViewController: UIViewController, tag: Int) {
+//        let alert = UIAlertController.init(title: title, message: message, preferredStyle: style)
+//        if (cancelButtonTitle != nil) {
+//            let cancelAction = UIAlertAction.init(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {
+//                _ in
+//                alert.dismissViewControllerAnimated(true, completion: nil)
+//                delegate?.performSelector(Selector(alertControllerCancelled()), withObject: nil)
+//            })
+//        }
+//    }
     
 }
     
