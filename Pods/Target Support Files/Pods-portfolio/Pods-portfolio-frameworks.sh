@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-portfolio/Alamofire.framework"
+  install_framework "Pods-portfolio/IQKeyboardManagerSwift.framework"
   install_framework "Pods-portfolio/KFSwiftImageLoader.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-portfolio/Alamofire.framework"
+  install_framework "Pods-portfolio/IQKeyboardManagerSwift.framework"
   install_framework "Pods-portfolio/KFSwiftImageLoader.framework"
 fi

@@ -8,6 +8,7 @@ target 'portfolio' do
 
 pod 'Alamofire', '~> 3.1'
 pod 'KFSwiftImageLoader', '~> 2.0'
+pod 'IQKeyboardManagerSwift', '3.3.4'
 
 end
 

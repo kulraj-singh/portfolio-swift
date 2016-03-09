@@ -19,6 +19,7 @@
 		E31D24661BFF249D00B1631A /* welcome_xperts.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E31D24641BFF249D00B1631A /* welcome_xperts.mp3 */; };
 		E31D246C1BFF49FD00B1631A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31D246B1BFF49FD00B1631A /* HomeViewController.xib */; };
 		E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34616F91C0ED76A009685EA /* ViewManipulations.swift */; };
+		E358A9CC1C902C72003824C7 /* TextFieldUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358A9CB1C902C72003824C7 /* TextFieldUtility.swift */; };
 		E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */; };
 		E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B65501C6DEC5E00B4B064 /* AppModel.swift */; };
 		E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */; };
@@ -92,6 +93,7 @@
 		E31D24641BFF249D00B1631A /* welcome_xperts.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcome_xperts.mp3; sourceTree = "<group>"; };
 		E31D246B1BFF49FD00B1631A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E34616F91C0ED76A009685EA /* ViewManipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManipulations.swift; sourceTree = "<group>"; };
+		E358A9CB1C902C72003824C7 /* TextFieldUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldUtility.swift; sourceTree = "<group>"; };
 		E35B654E1C6DEC4B00B4B064 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		E35B65501C6DEC5E00B4B064 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		E35B65521C6DFBB700B4B064 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage.framework"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */,
 				E3B74C8E1C7F29C000378BEB /* StringHandling.swift */,
 				E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */,
+				E358A9CB1C902C72003824C7 /* TextFieldUtility.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				E35B65511C6DEC5E00B4B064 /* AppModel.swift in Sources */,
 				E31D245B1BFEF13E00B1631A /* Macros.swift in Sources */,
 				E39962251C806DA000BD9602 /* PortfolioDetailViewController.swift in Sources */,
+				E358A9CC1C902C72003824C7 /* TextFieldUtility.swift in Sources */,
 				E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */,
 				E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */,
 				E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */,

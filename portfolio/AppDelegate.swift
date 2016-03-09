@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+        
+        
+        IQKeyboardManager.sharedManager().enable = true
         return true
     }
 

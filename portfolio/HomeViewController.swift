@@ -135,29 +135,11 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func contactClicked(sender: AnyObject) {
-        let aboutVc = AboutUsViewController.init(nibName: "AboutUsViewController", bundle: nil)
-        self.navigationController?.pushViewController(aboutVc, animated: true)
+        let contactVc = ContactUsViewController.init(nibName: "ContactUsViewController", bundle: nil)
+        self.navigationController?.pushViewController(contactVc, animated: true)
     }
     
     @IBAction func soundClicked(sender: AnyObject) {
-        
+        self.btnSound.selected = !self.btnSound.selected
     }
 }
-
-//    
-//    - (IBAction)faqClicked:(id)sender
-//{
-//    FaqViewController *faqVc = [[FaqViewController alloc]initWithNibName:@"FaqViewController" bundle:nil];
-//    [self.navigationController pushViewController:faqVc animated:YES];
-//    }
-//    
-//    - (IBAction)soundClicked:(UIButton*)btnSound
-//{
-//    btnSound.selected = !btnSound.selected;
-//    }
-//    
-//    - (IBAction)contactClicked:(id)sender
-//{
-//    ContactUsViewController *contactUsVc = [[ContactUsViewController alloc]initWithNibName:@"ContactUsViewController" bundle:nil];
-//    [self.navigationController pushViewController:contactUsVc animated:YES];
-//}
