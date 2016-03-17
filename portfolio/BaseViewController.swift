@@ -6,6 +6,11 @@
 //  Copyright © 2015 Xperts Infosoft. All rights reserved.
 //
 
+enum Alert {
+    case None
+    case ContactUs
+}
+
 import UIKit
 import Alamofire
 
@@ -79,14 +84,14 @@ class BaseViewController: UIViewController {
     //MARK: alert
     
     internal func alert(message: String) {
-        self.alert(nil, message: message, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: 0)
+        self.alert(nil, message: message, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: .None)
     }
     
     internal func alert(message: String, presentingViewController: UIViewController, tag: Int) {
-        self.alert(nil, message: message, delegate: presentingViewController, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: tag)
+        self.alert(nil, message: message, delegate: presentingViewController, cancelButtonTitle: nil, otherButtonTitles: ["OK"], style: .Alert, tag: .None)
     }
     
-    internal func alert(title: String?, message: String, delegate:AnyObject?, cancelButtonTitle: String?, otherButtonTitles: Array<String>, style: UIAlertControllerStyle, tag: Int) {
+    internal func alert(title: String?, message: String, delegate:AnyObject?, cancelButtonTitle: String?, otherButtonTitles: Array<String>, style: UIAlertControllerStyle, tag: Alert) {
         self.alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
         if (cancelButtonTitle != nil) {
             let cancelAction = UIAlertAction.init(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {
@@ -128,7 +133,7 @@ class BaseViewController: UIViewController {
         
     }
     
-    internal func alertButtonClicked(index: Int, tag: Int) {
+    internal func alertButtonClicked(index: Int, tag: Alert) {
         
     }
 }

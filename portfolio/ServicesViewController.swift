@@ -15,7 +15,7 @@ class ServicesViewController: BaseViewController {
     @IBOutlet var tblServices: UITableView!
     @IBOutlet var viewCall: UIView!
     
-    //MARK: vc life cycle
+    //MARK: - vc life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ServicesViewController: BaseViewController {
         self.sendDataToServerWithTask(.TaskServices)
     }
     
-    //MARK: call service
+    //MARK: - call service
     
     func sendDataToServerWithTask(taskType: AFManager.TaskType) {
         

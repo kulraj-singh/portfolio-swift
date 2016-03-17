@@ -37,9 +37,8 @@
 		E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390CA1BF20AE50047EFD8 /* LaunchViewController.swift */; };
 		E3A390CD1BF20AE50047EFD8 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A390CB1BF20AE50047EFD8 /* LaunchViewController.xib */; };
 		E3A390D11BF210C50047EFD8 /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */; };
+		E3B47EE51C9A902B00BF2C18 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B47EE41C9A902B00BF2C18 /* Validations.swift */; };
 		E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */; };
-		E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B74C8E1C7F29C000378BEB /* StringHandling.swift */; };
-		E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D62D281C8710B4004478D1 /* AlertController.swift */; };
 		E3D73E071C8994C4009C83DE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D73E061C8994C4009C83DE /* ServicesViewController.swift */; };
 		E3D73E091C89969A009C83DE /* ServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D73E081C89969A009C83DE /* ServicesViewController.xib */; };
 		E3D73E0B1C89B724009C83DE /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D73E0A1C89B724009C83DE /* ContactUsViewController.swift */; };
@@ -120,9 +119,8 @@
 		E3A390CA1BF20AE50047EFD8 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E3A390CB1BF20AE50047EFD8 /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		E3A390D01BF210C50047EFD8 /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
+		E3B47EE41C9A902B00BF2C18 /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexToRgb.swift; sourceTree = "<group>"; };
-		E3B74C8E1C7F29C000378BEB /* StringHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHandling.swift; sourceTree = "<group>"; };
-		E3D62D281C8710B4004478D1 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E3D73E061C8994C4009C83DE /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		E3D73E081C89969A009C83DE /* ServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServicesViewController.xib; sourceTree = "<group>"; };
 		E3D73E0A1C89B724009C83DE /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
@@ -193,9 +191,9 @@
 			children = (
 				E34616F91C0ED76A009685EA /* ViewManipulations.swift */,
 				E3B74C8C1C7ED7E400378BEB /* HexToRgb.swift */,
-				E3B74C8E1C7F29C000378BEB /* StringHandling.swift */,
 				E35B65581C6E03A500B4B064 /* UIImageView+AFNetworking.swift */,
 				E358A9CB1C902C72003824C7 /* TextFieldUtility.swift */,
+				E3B47EE41C9A902B00BF2C18 /* Validations.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -270,7 +268,6 @@
 			children = (
 				E35B654D1C6DEC2C00B4B064 /* models */,
 				E3A390CF1BF210BB0047EFD8 /* external classes */,
-				E3D62D281C8710B4004478D1 /* AlertController.swift */,
 				E317180E1C885F8F00D26675 /* AboutUsScrollView.swift */,
 				E31718101C885F9700D26675 /* AboutUsScrollView.xib */,
 			);
@@ -512,13 +509,12 @@
 				E3A3909B1BF2082F0047EFD8 /* AppDelegate.swift in Sources */,
 				E35B654F1C6DEC4B00B4B064 /* BaseModel.swift in Sources */,
 				E34616FA1C0ED76A009685EA /* ViewManipulations.swift in Sources */,
-				E3B74C8F1C7F29C000378BEB /* StringHandling.swift in Sources */,
 				E3A390CC1BF20AE50047EFD8 /* LaunchViewController.swift in Sources */,
 				E35FF75C1C36A1FF00158C8F /* PortfolioViewController.swift in Sources */,
 				E3D73E0D1C89B74B009C83DE /* FaqViewController.swift in Sources */,
+				E3B47EE51C9A902B00BF2C18 /* Validations.swift in Sources */,
 				E3A390C91BF20AC40047EFD8 /* BaseViewController.swift in Sources */,
 				E31718091C884CBE00D26675 /* AboutUsViewController.swift in Sources */,
-				E3D62D291C8710B4004478D1 /* AlertController.swift in Sources */,
 				E31D24601BFF0C0200B1631A /* HomeViewController.swift in Sources */,
 				E3B74C8D1C7ED7E400378BEB /* HexToRgb.swift in Sources */,
 				E35B65591C6E03A600B4B064 /* UIImageView+AFNetworking.swift in Sources */,
